@@ -58,6 +58,10 @@ class SecureVault(App):
         self.password = None
         self.selected_vault = None
         self.selected_source = None
+        if platform == "android":
+            activity.bind(
+                on_activity_result=self.on_activity_result
+            )
 
         self.config = None
         if os.path.exists(self.config_file):
@@ -314,10 +318,97 @@ class SecureVault(App):
         self.password = None
         self.selected_vault = None
         self.show_login()
+        def on_activity_result(self, request_code, result_code, intent):
+        if request_code != 1001:
+            return
+
+        if result_code != -1 or intent is None:
+            self.show_message("لم يتم اختيار ملف.")
+            return
+
+        try:
+            uri = intent.getData()
+
+            if uri is None:
+                self.show_message("تعذر الوصول إلى الملف.")
+                return
+
+            self.selected_source = uri
+            self.show_message(
+                "تم اختيار الملف بنجاح. سنجهز قراءته للتشفير."
+            )
+
+        except Exception as error:
+            self.show_message(
+                "تعذر اختيار الملف: " + str(error)
+            )
 
     # ---------- File picker ----------
 
     def open_file_picker(self, *_):
+        if platform == "android":
+            try:
+                Intent = autoclass("android.content.Intent")
+                PythonActivity = autoclass(
+                    "org.kivy.android.PythonActivity"
+                )
+
+                intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+                intent.addCategory(Intent.CATEGORY_OPENABLE)
+                intent.setType("*/*")
+
+                current_activity = PythonActivity.mActivity
+                current_activity.startActivityForResult(
+                    intent, 1001
+                )
+
+            except Exception as error:
+                self.show_message(
+                    "تعذر فتح الملفات: " + str(error)
+                )
+
+        else:
+            start = os.path.expanduser("~")
+
+            chooser = FileChooserListView(
+                path=start,
+                filters=["*"],
+                dirselect=False
+            )
+
+            layout = BoxLayout(
+                orientation="vertical",
+                spacing=dp(8),
+                padding=dp(8)
+            )
+            layout.add_widget(chooser)
+
+            popup = Popup(
+                title="اختر الملف",
+                content=layout,
+                size_hint=(0.96, 0.92)
+            )
+
+            def select_file(*_):
+                if not chooser.selection:
+                    self.show_message("اختر ملفاً أولاً.")
+                    return
+
+                self.selected_source = chooser.selection[0]
+                popup.dismiss()
+                self.confirm_original_action()
+
+            layout.add_widget(
+                self.make_button("اختيار الملف", select_file, 46)
+            )
+            layout.add_widget(
+                self.make_button(
+                    "إلغاء",
+                    lambda *_: popup.dismiss(),
+                    42
+                )
+            )
+            popup.open()
         start = os.path.expanduser("~")
 
         if os.path.isdir("/storage/emulated/0"):
