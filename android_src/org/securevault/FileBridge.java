@@ -78,9 +78,10 @@ public class FileBridge {
 
             output.flush();
             output.getFD().sync();
-        } catch (Exception error) {
-            destination.delete();
-            throw error;
+       } catch (IOException | RuntimeException error) {
+    destination.delete();
+    throw error;
+}
         }
     }
 }
