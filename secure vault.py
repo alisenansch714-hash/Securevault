@@ -18,6 +18,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.filechooser import FileChooserListView
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
+from kivy.utils import platform
 
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
