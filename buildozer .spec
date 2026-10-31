@@ -19,6 +19,7 @@ android.minapi = 23
 android.arch = arm64-v8a
 
 android.gradle_dependencies = androidx.biometric:biometric:1.1.0
+android.enable_androidx = True
 
 android.permissions = USE_BIOMETRIC,USE_FINGERPRINT
 
