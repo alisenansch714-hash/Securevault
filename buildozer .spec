@@ -7,18 +7,22 @@ package.domain = org.securevault
 source.dir = .
 source.include_exts = py,png,jpg,jpeg,kv,atlas,json,ttf
 
-version = 1.0
+version = 2.0
 
 requirements = python3,kivy,cryptography,pyjnius
-android.arch = arm64-v8a
 
 orientation = portrait
 fullscreen = 0
 
-android.permissions = READ_MEDIA_IMAGES,READ_MEDIA_VIDEO,READ_MEDIA_AUDIO
-
 android.api = 35
 android.minapi = 23
+android.arch = arm64-v8a
+
+android.gradle_dependencies = androidx.biometric:biometric:1.1.0
+
+android.permissions = USE_BIOMETRIC,USE_FINGERPRINT
+
+android.accept_sdk_license = True
 
 [buildozer]
 
