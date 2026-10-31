@@ -19,6 +19,7 @@ from kivy.uix.filechooser import FileChooserListView
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 from kivy.utils import platform
+from kivy.clock import mainthread
 if platform == "android":
     from android import activity
     from jnius import autoclass
