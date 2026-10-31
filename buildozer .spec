@@ -9,7 +9,7 @@ source.include_exts = py,png,jpg,jpeg,kv,atlas,json,ttf
 
 version = 1.0
 
-requirements = python3,kivy,cryptography
+requirements = python3,kivy,cryptography,pyjnius
 android.arch = arm64-v8a
 
 orientation = portrait
