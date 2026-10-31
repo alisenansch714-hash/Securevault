@@ -17,6 +17,7 @@ fullscreen = 0
 android.api = 35
 android.minapi = 23
 android.arch = arm64-v8a
+android.add_src = android_src
 
 android.gradle_dependencies = androidx.biometric:biometric:1.1.0
 android.enable_androidx = True
