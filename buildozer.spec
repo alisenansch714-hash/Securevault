@@ -10,6 +10,7 @@ source.include_exts = py,png,jpg,jpeg,kv,atlas,json,ttf
 version = 2.0
 
 requirements = python3,kivy,cryptography,pyjnius
+p4a.branch = develop
 
 orientation = portrait
 fullscreen = 0
