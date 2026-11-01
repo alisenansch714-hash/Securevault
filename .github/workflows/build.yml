@@ -39,6 +39,9 @@ jobs:
         run: |
           mkdir -p "$HOME/.buildozer"
           yes | buildozer android update || true
+         - name: Remove cached python-for-android
+        run: |
+          rm -rf "$HOME/.buildozer/android/platform/python-for-android" 
 
       - name: Build APK
         run: |
