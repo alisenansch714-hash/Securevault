@@ -59,6 +59,7 @@ class SecureVault(App):
         self.password = None
         self.selected_vault = None
         self.selected_source = None
+        self.selected_source_uri = None
         if platform == "android":
             activity.bind(
                 on_activity_result=self.on_activity_result
