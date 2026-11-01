@@ -60,6 +60,7 @@ class SecureVault(App):
         self.selected_vault = None
         self.selected_source = None
         self.selected_source_uri = None
+        self.selected_source_name = None
         if platform == "android":
             activity.bind(
                 on_activity_result=self.on_activity_result
@@ -373,6 +374,7 @@ class SecureVault(App):
 
             self.selected_source = temporary_path
             self.selected_source_uri = uri
+            self.selected_source_name = filename
 
             self.confirm_original_action()
 
