@@ -319,7 +319,66 @@ class SecureVault(App):
         self.password = None
         self.selected_vault = None
         self.show_login()
-        def on_activity_result(self, request_code, result_code, intent):
+       @mainthread
+    def on_activity_result(self, request_code, result_code, intent):
+        if request_code != 1001:
+            return
+
+        if result_code != -1 or intent is None:
+            self.show_message("لم يتم اختيار ملف.")
+            return
+
+        try:
+            uri = intent.getData()
+
+            if uri is None:
+                self.show_message("تعذر الوصول إلى الملف.")
+                return
+
+            PythonActivity = autoclass(
+                "org.kivy.android.PythonActivity"
+            )
+            FileBridge = autoclass(
+                "org.securevault.FileBridge"
+            )
+
+            context = PythonActivity.mActivity
+
+            filename = str(
+                FileBridge.getDisplayName(context, uri)
+            )
+
+            filename = os.path.basename(filename)
+
+            if not filename or filename in (".", ".."):
+                filename = "selected_file"
+
+            imports_folder = os.path.join(
+                self.user_data_dir, "Imports"
+            )
+            os.makedirs(imports_folder, exist_ok=True)
+
+            temporary_path = os.path.join(
+                imports_folder,
+                uuid.uuid4().hex + "_" + filename
+            )
+
+            FileBridge.copyUriToFile(
+                context, uri, temporary_path
+            )
+
+            if not os.path.isfile(temporary_path):
+                raise ValueError("File copy failed")
+
+            self.selected_source = temporary_path
+            self.selected_source_uri = uri
+
+            self.confirm_original_action()
+
+        except Exception as error:
+            self.show_message(
+                "تعذر استيراد الملف: " + str(error)
+            )
         if request_code != 1001:
             return
 
