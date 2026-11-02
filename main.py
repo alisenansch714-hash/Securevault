@@ -670,11 +670,12 @@ def make_label(self, text, size=16, color=WHITE):
 
         layout.add_widget(chooser)
 
-        popup = Popup(
-            title="اختر الملف",
-            content=layout,
-            size_hint=(0.96, 0.92)
-        )
+      popup = Popup(
+    title="اختر الملف",
+    title_font="Arabic",
+    content=layout,
+    size_hint=(0.96, 0.92)
+)
 
         def select_file(*_):
 
