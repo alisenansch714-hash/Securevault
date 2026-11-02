@@ -735,18 +735,21 @@ def make_label(self, text, size=16, color=WHITE):
             spacing=dp(10)
         )
 
-        layout.add_widget(
-            Label(
-                text="ماذا تريد أن يحدث للملف الأصلي؟",
-                color=WHITE
-            )
+     Label(
+    text="ماذا تريد أن يحدث للملف الأصلي؟",
+    font_name="Arabic",
+    font_size="16sp",
+    color=WHITE,
+    halign="center"
+)
         )
 
-        popup = Popup(
-            title="تأكيد العملية",
-            content=layout,
-            size_hint=(0.9, 0.48)
-        )
+       popup = Popup(
+    title="تأكيد العملية",
+    title_font="Arabic",
+    content=layout,
+    size_hint=(0.9, 0.48)
+)
 
         layout.add_widget(
             self.make_button(
