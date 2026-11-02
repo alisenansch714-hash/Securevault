@@ -9,7 +9,7 @@ source.include_exts = py,png,jpg,jpeg,kv,atlas,json,ttf
 
 version = 2.0
 
-requirements = python3,kivy,cryptography,pyjnius
+requirements = python3,kivy,cryptography,pyjnius,arabic-reshaper,python-bidi
 p4a.branch = develop
 
 orientation = portrait
