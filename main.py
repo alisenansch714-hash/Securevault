@@ -123,17 +123,18 @@ class SecureVault(App):
 
     # ---------- Interface helpers ----------
 
-    def make_button(self, text, callback, height=52):
+  def make_button(self, text, callback, height=52):
 
-        btn = Button(
-            text=text,
-            size_hint_y=None,
-            height=dp(height),
-            background_normal="",
-            background_color=BLUE,
-            color=WHITE,
-            font_size="16sp"
-        )
+    btn = Button(
+        text=text,
+        size_hint_y=None,
+        height=dp(height),
+        background_normal="",
+        background_color=BLUE,
+        color=WHITE,
+        font_size="16sp",
+        font_name="Arabic"
+    )
 
         btn.bind(on_release=callback)
 
