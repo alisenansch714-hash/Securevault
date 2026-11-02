@@ -18,6 +18,7 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 from kivy.utils import platform
 from kivy.clock import mainthread
+from kivy.core.text import LabelBase
 
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
@@ -44,9 +45,20 @@ class SecureVault(App):
 
     # ---------- Application startup ----------
 
-    def build(self):
+   def build(self):
 
-        self.title = "Secure Vault"
+    self.title = "Secure Vault"
+
+    font_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "fonts",
+        "NotoNaskhArabic-VariableFont_wght.ttf"
+    )
+
+    LabelBase.register(
+        name="Arabic",
+        fn_regular=font_path
+    )
 
         self.base = self.user_data_dir
 
