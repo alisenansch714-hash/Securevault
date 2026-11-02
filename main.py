@@ -123,28 +123,29 @@ class SecureVault(App):
 
     # ---------- Interface helpers ----------
 
-  def make_button(self, text, callback, height=52):
+def make_button(self, text, callback, height=52):
 
-    btn = Button(
-        text=text,
-        size_hint_y=None,
-        height=dp(height),
-        background_normal="",
-        background_color=BLUE,
-        color=WHITE,
-        font_size="16sp",
-        font_name="Arabic"
-    )
+        btn = Button(
+            text=text,
+            size_hint_y=None,
+            height=dp(height),
+            background_normal="",
+            background_color=BLUE,
+            color=WHITE,
+            font_size="16sp",
+            font_name="Arabic"
+        )
 
         btn.bind(on_release=callback)
 
         return btn
 
-    def make_label(self, text, size=16, color=WHITE):
+def make_label(self, text, size=16, color=WHITE):
 
         return Label(
             text=text,
             font_size=f"{size}sp",
+            font_name="Arabic",
             color=color,
             size_hint_y=None,
             height=dp(42),
@@ -154,10 +155,11 @@ class SecureVault(App):
 
     def make_password_input(self, hint):
 
-        return TextInput(
+       return TextInput(
             hint_text=hint,
             password=True,
             multiline=False,
+            font_name="Arabic",
             size_hint_y=None,
             height=dp(52),
             background_color=PANEL,
