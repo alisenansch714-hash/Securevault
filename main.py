@@ -1087,11 +1087,12 @@ def make_label(self, text, size=16, color=WHITE):
             spacing=dp(10)
         )
 
-        popup = Popup(
-            title="إدارة الملف",
-            content=layout,
-            size_hint=(0.88, 0.42)
-        )
+       popup = Popup(
+    title="إدارة الملف",
+    title_font="Arabic",
+    content=layout,
+    size_hint=(0.88, 0.42)
+)
 
         layout.add_widget(
             self.make_button(
