@@ -29,6 +29,10 @@ jobs:
             libncursesw5-dev libtinfo6 \
             cmake libffi-dev libssl-dev \
             build-essential
+      - name: Set up Java 17
+        run: |
+          echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $GITHUB_ENV
+          echo "$JAVA_HOME_17_X64/bin" >> $GITHUB_PATH
 
       - name: Install Buildozer
         run: |
