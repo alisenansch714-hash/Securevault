@@ -182,9 +182,13 @@ def make_label(self, text, size=16, color=WHITE):
         )
 
         content.add_widget(
-            Label(
-                text=message,
-                color=WHITE
+         Label(
+    text=message,
+    font_name="Arabic",
+    font_size="16sp",
+    color=WHITE,
+    halign="center"
+)
             )
         )
 
