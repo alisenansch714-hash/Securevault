@@ -45,17 +45,17 @@ class SecureVault(App):
 
     # ---------- Application startup ----------
 
-   def build(self):
+    def build(self):
 
-    self.title = "Secure Vault"
+        self.title = "Secure Vault"
 
-    font_path = os.path.join(
-        os.path.dirname(os.path.abspath(__file__)),
-        "fonts",
-        "NotoNaskhArabic-VariableFont_wght.ttf"
-    )
+        font_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "fonts",
+            "NotoNaskhArabic-VariableFont_wght.ttf"
+        )
 
- LabelBase.register(
+        LabelBase.register(
             name="Arabic",
             fn_regular=font_path
         )
@@ -68,7 +68,6 @@ class SecureVault(App):
 
         self.imports_folder = os.path.join(
             self.base, "Imports"
-        )
         )
 
         self.config_file = os.path.join(
