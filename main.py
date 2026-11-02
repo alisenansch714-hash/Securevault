@@ -55,10 +55,10 @@ class SecureVault(App):
         "NotoNaskhArabic-VariableFont_wght.ttf"
     )
 
-    LabelBase.register(
-        name="Arabic",
-        fn_regular=font_path
-    )
+ LabelBase.register(
+            name="Arabic",
+            fn_regular=font_path
+        )
 
         self.base = self.user_data_dir
 
@@ -68,6 +68,7 @@ class SecureVault(App):
 
         self.imports_folder = os.path.join(
             self.base, "Imports"
+        )
         )
 
         self.config_file = os.path.join(
