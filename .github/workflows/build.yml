@@ -43,12 +43,17 @@ jobs:
       - name: Remove cached python-for-android
         run: |
           rm -rf "$HOME/.buildozer/android/platform/python-for-android"
-
       - name: Build APK
         run: |
           buildozer -v android debug
 
+      - name: Upload APK
         uses: actions/upload-artifact@v4
+        with:
+          name: Secure-Vault-APK
+          path: bin/*.apk
+          if-no-files-found: error
+    
         with:
           name: SecureVault-APK
           path: bin/*.apk
