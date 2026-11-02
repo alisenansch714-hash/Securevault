@@ -173,7 +173,7 @@ def make_label(self, text, size=16, color=WHITE):
 
         self.root_box.clear_widgets()
 
-    def show_message(self, message):
+  def show_message(self, message):
 
         content = BoxLayout(
             orientation="vertical",
@@ -182,13 +182,13 @@ def make_label(self, text, size=16, color=WHITE):
         )
 
         content.add_widget(
-         Label(
-    text=message,
-    font_name="Arabic",
-    font_size="16sp",
-    color=WHITE,
-    halign="center"
-)
+            Label(
+                text=message,
+                font_name="Arabic",
+                font_size="16sp",
+                color=WHITE,
+                halign="center",
+                valign="middle"
             )
         )
 
