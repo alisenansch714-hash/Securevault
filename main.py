@@ -1236,17 +1236,22 @@ def make_label(self, text, size=16, color=WHITE):
             spacing=dp(10)
         )
 
-        popup = Popup(
-            title="تأكيد الحذف",
-            content=layout,
-            size_hint=(0.88, 0.38)
+      popup = Popup(
+    title="تأكيد الحذف",
+    title_font="Arabic",
+    content=layout,
+    size_hint=(0.88, 0.38)
+)
         )
 
         layout.add_widget(
-            Label(
-                text="هل تريد حذف الملف المشفر من الخزنة؟",
-                color=WHITE
-            )
+           Label(
+    text="هل تريد حذف الملف المشفر من الخزنة؟",
+    font_name="Arabic",
+    font_size="16sp",
+    color=WHITE,
+    halign="center"
+)
         )
 
         def delete(*_):
