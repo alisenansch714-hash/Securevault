@@ -45,7 +45,7 @@ class SecureVault(App):
 
     # ---------- Application startup ----------
 
-    def build(self):
+  def build(self):
 
         self.title = "Secure Vault"
 
@@ -102,7 +102,7 @@ class SecureVault(App):
 
                     self.config = json.load(f)
 
-      except Exception:
+            except Exception:
                 self.config = None
 
         self.root_box = BoxLayout(
@@ -117,10 +117,9 @@ class SecureVault(App):
                 on_activity_result=self.on_activity_result
             )
 
-       self.show_login()
+        self.show_login()
 
         return self.root_box
-
     # ---------- Interface helpers ----------
 
     def make_button(self, text, callback, height=52):
