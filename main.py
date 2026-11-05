@@ -120,9 +120,9 @@ class SecureVault(App):
         self.show_login()
 
         return self.root_box
-    # ---------- Interface helpers ----------
-  
- def make_button(self, text, callback, height=52):
+# ---------- Interface helpers----------
+   
+    def make_button(self, text, callback, height=52):
 
         btn = Button(
             text=text,
