@@ -102,7 +102,7 @@ class SecureVault(App):
 
                     self.config = json.load(f)
 
-            except Exception:
+      except Exception:
                 self.config = None
 
         self.root_box = BoxLayout(
