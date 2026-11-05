@@ -136,11 +136,11 @@ def make_button(self, text, callback, height=52):
             font_name="Arabic"
         )
 
-        btn.bind(on_release=callback)
+      btn.bind(on_release=callback)
 
         return btn
 
-def make_label(self, text, size=16, color=WHITE):
+    def make_label(self, text, size=16, color=WHITE):
 
         return Label(
             text=text,
@@ -155,7 +155,7 @@ def make_label(self, text, size=16, color=WHITE):
 
     def make_password_input(self, hint):
 
-       return TextInput(
+        return TextInput(
             hint_text=hint,
             password=True,
             multiline=False,
@@ -173,7 +173,7 @@ def make_label(self, text, size=16, color=WHITE):
 
         self.root_box.clear_widgets()
 
-  def show_message(self, message):
+    def show_message(self, message):
 
         content = BoxLayout(
             orientation="vertical",
