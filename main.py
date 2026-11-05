@@ -117,13 +117,13 @@ class SecureVault(App):
                 on_activity_result=self.on_activity_result
             )
 
-        self.show_login()
+       self.show_login()
 
         return self.root_box
 
     # ---------- Interface helpers ----------
 
-def make_button(self, text, callback, height=52):
+    def make_button(self, text, callback, height=52):
 
         btn = Button(
             text=text,
@@ -136,7 +136,7 @@ def make_button(self, text, callback, height=52):
             font_name="Arabic"
         )
 
-      btn.bind(on_release=callback)
+        btn.bind(on_release=callback)
 
         return btn
 
@@ -152,7 +152,6 @@ def make_button(self, text, callback, height=52):
             halign="center",
             valign="middle"
         )
-
     def make_password_input(self, hint):
 
         return TextInput(
