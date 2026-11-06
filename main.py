@@ -119,7 +119,7 @@ class SecureVault(App):
 
 self.show_login()
 
- return self.root_box
+return self.root_box
 
     # ---------- Interface helpers ----------
 
