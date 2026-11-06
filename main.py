@@ -117,13 +117,13 @@ class SecureVault(App):
                 on_activity_result=self.on_activity_result
             )
 
-        self.show_login()
+self.show_login()
 
-        return self.root_box
-# ---------- Interface helpers----------
-   
+ return self.root_box
+
+    # ---------- Interface helpers ----------
+
     def make_button(self, text, callback, height=52):
-
         btn = Button(
             text=text,
             size_hint_y=None,
