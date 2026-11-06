@@ -124,6 +124,7 @@ return self.root_box
     # ---------- Interface helpers ----------
 
     def make_button(self, text, callback, height=52):
+        
         btn = Button(
             text=text,
             size_hint_y=None,
