@@ -117,9 +117,9 @@ class SecureVault(App):
                 on_activity_result=self.on_activity_result
             )
 
-self.show_login()
+        self.show_login()
 
-return self.root_box
+        return self.root_box
 
     # ---------- Interface helpers ----------
 
