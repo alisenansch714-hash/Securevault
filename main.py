@@ -123,7 +123,7 @@ class SecureVault(App):
 
     # ---------- Interface helpers ----------
 
-    def make_button(self, text, callback, height=52):
+  def make_button(self, text, callback, height=52):
         
         btn = Button(
             text=text,
