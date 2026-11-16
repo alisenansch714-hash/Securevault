@@ -140,7 +140,7 @@ class SecureVault(App):
 
         return btn
 
-    def make_label(self, text, size=16, color=WHITE):
+  def make_label(self, text, size=16, color=WHITE):
 
         return Label(
             text=text,
