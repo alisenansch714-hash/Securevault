@@ -168,11 +168,11 @@ class SecureVault(App):
             padding=dp(12)
         )
 
-    def clear_screen(self):
+  def clear_screen(self):
 
         self.root_box.clear_widgets()
 
-    def show_message(self, message):
+  def show_message(self, message):
 
         content = BoxLayout(
             orientation="vertical",
