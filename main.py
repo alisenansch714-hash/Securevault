@@ -676,7 +676,7 @@ popup = Popup(
     size_hint=(0.96, 0.92)
 )
 
-  def select_file(*_):
+def select_file(*_):
 
             if not chooser.selection:
 
