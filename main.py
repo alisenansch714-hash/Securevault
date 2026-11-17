@@ -210,7 +210,7 @@ class SecureVault(App):
 
     # ---------- Encryption key ----------
 
-    def derive_key(self, password, salt):
+  def derive_key(self, password, salt):
 
         return hashlib.pbkdf2_hmac(
             "sha256",
