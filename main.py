@@ -469,7 +469,7 @@ class SecureVault(App):
 
     # ---------- Lock vault ----------
 
-   def lock_vault(self, *_):
+  def lock_vault(self, *_):
 
         self.password = None
 
