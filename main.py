@@ -222,7 +222,7 @@ class SecureVault(App):
 
     # ---------- Login screen ----------
 
-    def show_login(self):
+  def show_login(self):
 
         self.clear_screen()
 
@@ -285,7 +285,7 @@ class SecureVault(App):
 
     # ---------- Create password ----------
 
-    def create_password(self, *_):
+  def create_password(self, *_):
 
         password = self.password_input.text
 
@@ -355,7 +355,7 @@ class SecureVault(App):
 
     # ---------- Login ----------
 
-    def login(self, *_):
+  def login(self, *_):
 
         password = self.password_input.text
 
@@ -399,7 +399,7 @@ class SecureVault(App):
 
     # ---------- Home screen ----------
 
-    def show_home(self):
+  def show_home(self):
 
         self.clear_screen()
 
@@ -469,7 +469,7 @@ class SecureVault(App):
 
     # ---------- Lock vault ----------
 
-    def lock_vault(self, *_):
+   def lock_vault(self, *_):
 
         self.password = None
 
@@ -482,7 +482,7 @@ class SecureVault(App):
 
     # ---------- File picker ----------
 
-    def open_file_picker(self, *_):
+  def open_file_picker(self, *_):
 
         if platform == "android":
 
@@ -532,7 +532,7 @@ class SecureVault(App):
     # ---------- Android file result ----------
 
     @mainthread
-    def on_activity_result(
+   def on_activity_result(
         self,
         request_code,
         result_code,
@@ -653,7 +653,7 @@ class SecureVault(App):
 
     # ---------- Windows file picker ----------
 
-    def open_windows_file_picker(self):
+   def open_windows_file_picker(self):
 
         chooser = FileChooserListView(
             path=os.path.expanduser("~"),
@@ -726,7 +726,7 @@ class SecureVault(App):
 
     # ---------- Original file confirmation ----------
 
-    def confirm_original_action(self):
+   def confirm_original_action(self):
 
         layout = BoxLayout(
             orientation="vertical",
@@ -784,7 +784,7 @@ class SecureVault(App):
 
     # ---------- Encryption ----------
 
-    def encrypt_file(self, delete_original):
+   def encrypt_file(self, delete_original):
 
         source = self.selected_source
 
@@ -1009,7 +1009,7 @@ class SecureVault(App):
 
     # ---------- Vault files ----------
 
-    def show_vault(self, *_):
+  def show_vault(self, *_):
 
         self.clear_screen()
 
@@ -1076,7 +1076,7 @@ class SecureVault(App):
 
     # ---------- Select vault file ----------
 
-    def select_vault(self, path):
+  def select_vault(self, path):
 
         self.selected_vault = path
 
@@ -1127,7 +1127,7 @@ class SecureVault(App):
 
     # ---------- Decryption and restore ----------
 
-    def decrypt_file(self):
+  def decrypt_file(self):
 
         try:
 
@@ -1224,7 +1224,7 @@ class SecureVault(App):
 
     # ---------- Delete vault file ----------
 
-    def confirm_vault_delete(self):
+  def confirm_vault_delete(self):
 
         if not self.selected_vault:
             return
