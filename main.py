@@ -669,7 +669,7 @@ class SecureVault(App):
 
         layout.add_widget(chooser)
 
-      popup = Popup(
+    popup = Popup(
     title="اختر الملف",
     title_font="Arabic",
     content=layout,
