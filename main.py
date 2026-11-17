@@ -532,7 +532,7 @@ class SecureVault(App):
     # ---------- Android file result ----------
 
     @mainthread
-   def on_activity_result(
+  def on_activity_result(
         self,
         request_code,
         result_code,
