@@ -653,7 +653,7 @@ class SecureVault(App):
 
     # ---------- Windows file picker ----------
 
-   def open_windows_file_picker(self):
+  def open_windows_file_picker(self):
 
         chooser = FileChooserListView(
             path=os.path.expanduser("~"),
@@ -726,7 +726,7 @@ class SecureVault(App):
 
     # ---------- Original file confirmation ----------
 
-   def confirm_original_action(self):
+  def confirm_original_action(self):
 
         layout = BoxLayout(
             orientation="vertical",
@@ -784,7 +784,7 @@ class SecureVault(App):
 
     # ---------- Encryption ----------
 
-   def encrypt_file(self, delete_original):
+  def encrypt_file(self, delete_original):
 
         source = self.selected_source
 
