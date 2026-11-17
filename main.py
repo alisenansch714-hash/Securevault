@@ -152,7 +152,7 @@ class SecureVault(App):
             halign="center",
             valign="middle"
         )
- def make_password_input(self, hint):
+  def make_password_input(self, hint):
 
         return TextInput(
             hint_text=hint,
